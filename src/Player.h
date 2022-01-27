@@ -42,6 +42,7 @@ public:
 		if (Keyboard::isKeyPressed(Keyboard::S)) {
 			state = down; speed = player_s;
 		}
+	
 	}
 	FloatRect getRect1() {
 		return FloatRect(x, y, w, h);
@@ -75,7 +76,7 @@ public:
 			CurrentFrame -= 3;
 		}
 		sprite.setTextureRect(IntRect(94 * int(CurrentFrame), 0, 94, 159));
-
+		
 	}
 
 };

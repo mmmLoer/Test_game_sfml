@@ -30,6 +30,14 @@ int main()
 	BulletImage.loadFromFile("img/bullet.png");
 	BulletImage.createMaskFromColor(Color(255, 255, 255));
 
+	Texture texture;
+	texture.loadFromFile("img/fon.jpg");
+
+	Font font;
+	font.loadFromFile("font/CyrilicOld.TTF");
+	Text text("", font, 20);
+	text.setStyle(sf::Text::Bold | sf::Text::Underlined);
+
 	sf::Event event;
 
 	while (window.isOpen())
@@ -38,11 +46,12 @@ int main()
 		std::list <Entity*> entities;
 		std::list <Entity*>::iterator it;
 		read();
+
 		int** params = new int* [enemy_volume];
 		int a = 0;
 		for (int i = 0; i < enemy_volume; i++) {
 			params[i] = new int[2];
-			params[i][0] = rand() % 350;
+			params[i][0] = (rand() % 350)-50;
 			params[i][1] = a - enemy_dist;
 			a -= enemy_dist;
 		}
@@ -53,10 +62,7 @@ int main()
 		Bullet b(BulletImage, -100, -100, 16, 32, bullet_s);
 		Bullet b2(BulletImage, -100, -100, 16, 32, bullet_s);
 		while (game == 1) {
-			Font font;
-			font.loadFromFile("font/CyrilicOld.TTF");
-			Text text("", font, 20);
-			text.setStyle(sf::Text::Bold | sf::Text::Underlined);
+			
 
 			float time = clock.getElapsedTime().asMicroseconds();
 			clock.restart();
@@ -73,14 +79,16 @@ int main()
 			}
 
 			window.clear();
-
+			Sprite background(texture);
+			window.draw(background);
 			int i = 0;
 			for (it = entities.begin(); it != entities.end(); it++) {
 				(*it)->x = params[i][0];
+				params[i][0] += 1;
 				if ((*it)->y > 1100) {
 					(*it)->y = -100;
 					(*it)->enemy_s = enemy_s + 0.005;
-					params[i][0] = rand() % 350;
+					params[i][0] = (rand() % 350)-50;
 				}
 				(*it)->update(time);
 				i++;

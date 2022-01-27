@@ -10,7 +10,7 @@
 using namespace sf;
 using namespace std;
 int enemy_volume, enemy_dist, playerScore, game = 1;
-float CurrentFrame=0, player_s, bullet_s, enemy_s, Time_Bullet=3;
+float CurrentFrame=0, player_s, bullet_s, enemy_s, enemy_x, Time_Bullet=3;
 
 class Entity {
 public:
