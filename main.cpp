@@ -11,7 +11,7 @@ int main()
 	Clock clock;
 	Image heroImage;
 
-	RenderWindow window(sf::VideoMode(400, 1000), "Game");
+	RenderWindow window(sf::VideoMode(400, 1000), "My Game");
 
 	SoundBuffer shootBuffer;
 	shootBuffer.loadFromFile("audio/shoot.ogg");
