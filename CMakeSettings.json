@@ -15,6 +15,11 @@
           "name": "CMAKE_INSTALL_PREFIX",
           "value": "C:/Users/goroh/OneDrive/Рабочий стол/sfml_sample-main/out/install/x64-Debug",
           "type": "PATH"
+        },
+        {
+          "name": "CMAKE_BUILD_TYPE",
+          "value": "Debug",
+          "type": "STRING"
         }
       ]
     },
@@ -22,17 +27,22 @@
       "name": "x64-Release",
       "generator": "Ninja",
       "configurationType": "Release",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
       "buildRoot": "${projectDir}\\out\\build\\${name}",
       "installRoot": "${projectDir}\\out\\install\\${name}",
       "cmakeCommandArgs": "",
       "buildCommandArgs": "",
       "ctestCommandArgs": "",
-      "inheritEnvironments": [ "msvc_x64_x64" ],
       "variables": [
         {
           "name": "CMAKE_INSTALL_PREFIX",
-          "value": "C:/Users/goroh/OneDrive/Рабочий стол/sfml_sample-main/out/install/x64-Debug",
+          "value": "C:/Users/goroh/OneDrive/Рабочий стол/sfml_sample-main/out/install/x64-Release",
           "type": "PATH"
+        },
+        {
+          "name": "CMAKE_BUILD_TYPE",
+          "value": "Release",
+          "type": "STRING"
         }
       ]
     }

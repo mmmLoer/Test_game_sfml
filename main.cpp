@@ -83,12 +83,12 @@ int main()
 			window.draw(background);
 			int i = 0;
 			for (it = entities.begin(); it != entities.end(); it++) {
-				(*it)->x = params[i][0];
-				params[i][0] += 1;
+				(*it)->x += 0.04;
 				if ((*it)->y > 1100) {
 					(*it)->y = -100;
 					(*it)->enemy_s = enemy_s + 0.005;
 					params[i][0] = (rand() % 350)-50;
+					(*it)->x = params[i][0];
 				}
 				(*it)->update(time);
 				i++;
